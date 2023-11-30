@@ -1,4 +1,4 @@
-package com.botapp.view
+package com.botapp.ui
 
 import android.content.Intent
 import android.os.Build
@@ -20,6 +20,8 @@ class SelectGameActivity : AppCompatActivity() {
         btnMakeQuestion.setOnClickListener {
             val bundle = Bundle()
             val bot = intent.getParcelableExtra("bot", Bot::class.java)!!
+
+            bundle.putParcelable("bot", bot)
 
             val intent = Intent(this, MakeQuestionActivity::class.java)
             intent.putExtras(bundle)

@@ -1,4 +1,4 @@
-package com.botapp.view
+package com.botapp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -30,6 +30,5 @@ class ChooseBotActivity : AppCompatActivity() {
 
             startActivity(intent)
         }
-
     }
 }
