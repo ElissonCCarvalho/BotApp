@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ChooseBotActivity">
+
+    <TextView
+        android:id="@+id/lblChooseBot"
+        android:layout_width="306dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="55dp"
+        android:fontFamily="casual"
+        android:text="Escolha um robô"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSimpleBot"
+        android:layout_width="313dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="11dp"
+        android:fontFamily="casual"
+        android:text="Robô Simples"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAdvancedBot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnPremiumBot"
+        android:layout_width="313dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="41dp"
+        android:fontFamily="casual"
+        android:text="Robô Premium"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="313dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="53dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="85dp"
+        android:fontFamily="casual"
+        android:text="Voltar"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnAdvancedBot"
+        android:layout_width="313dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginEnd="49dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="casual"
+        android:text="Robô Avançado"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPremiumBot"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
