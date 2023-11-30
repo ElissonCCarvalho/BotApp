@@ -13,6 +13,12 @@
         android:theme="@style/Theme.BotApp"
         tools:targetApi="31">
         <activity
+            android:name=".view.MakeQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.SelectGameActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.ChooseBotActivity"
             android:exported="false" />
         <activity
