@@ -1,12 +1,15 @@
 package com.botapp.bot
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.botapp.question.AdvancedQuestion
 import com.botapp.question.Question
 import com.botapp.question.SimpleQuestion
 
-open class AdvancedBot : Bot {
-    constructor() : super("Marciano")
+open class AdvancedBot : Bot  {
     constructor(name: String) : super(name)
+
+    constructor(parcel: Parcel) : this(parcel.readString()!!) { }
 
     private fun getAction(question: AdvancedQuestion): (() -> Double)? {
         val sum = "some" to { question.operands.sum() }
@@ -23,7 +26,7 @@ open class AdvancedBot : Bot {
         val operator = question.operator.lowercase()
         val operands = question.operands
 
-        if (operator.equals("divida") && operands.drop(1).any { it == 0.0 })
+        if (operator == "divida" && operands.drop(1).any { it == 0.0 })
             return "Erro: Não é possível dividir por zero."
 
         val result = this.getAction(question)?.invoke().toString()
@@ -39,5 +42,15 @@ open class AdvancedBot : Bot {
         if (question is SimpleQuestion) return super.reply(question)
 
         return this.getResult(question as AdvancedQuestion)
+    }
+
+    companion object CREATOR : Parcelable.Creator<Bot> {
+        override fun createFromParcel(parcel: Parcel): Bot {
+            return AdvancedBot(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Bot?> {
+            return arrayOfNulls(size)
+        }
     }
 }

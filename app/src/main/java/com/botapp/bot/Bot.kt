@@ -2,35 +2,17 @@ package com.botapp.bot
 
 import android.os.Parcel
 import android.os.Parcelable
+
 import com.botapp.enums.ResponseMessage
 import com.botapp.question.Question
 import com.botapp.question.SimpleQuestion
 
-open class Bot(var name: String): Parcelable {
-
+open class Bot(var name: String): Parcelable  {
     constructor(parcel: Parcel) : this(parcel.readString()!!) {
     }
 
     open fun getVersion(): String {
         return "Simplificado"
-    }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(name)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<Bot> {
-        override fun createFromParcel(parcel: Parcel): Bot {
-            return Bot(parcel)
-        }
-
-        override fun newArray(size: Int): Array<Bot?> {
-            return arrayOfNulls(size)
-        }
     }
 
     open fun reply(question: Question): String {
@@ -44,5 +26,23 @@ open class Bot(var name: String): Parcelable {
         }
 
         return ResponseMessage.DEFAULT.message
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    override fun writeToParcel(dest: Parcel, flags: Int) {
+        dest.writeString(this.name)
+    }
+
+    companion object CREATOR : Parcelable.Creator<Bot> {
+        override fun createFromParcel(parcel: Parcel): Bot {
+            return Bot(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Bot?> {
+            return arrayOfNulls(size)
+        }
     }
 }

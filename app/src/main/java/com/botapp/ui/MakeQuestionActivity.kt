@@ -26,9 +26,7 @@ class MakeQuestionActivity : AppCompatActivity() {
         btnSubmit.setOnClickListener {
             val input = edtQuestion.text.toString()
 
-            val question = Question().makeQuestion(input);
-
-            //val responseMessage =
+            val question = Question().makeQuestion(input)
 
             lblResponse.text = bot.reply(question)
         }

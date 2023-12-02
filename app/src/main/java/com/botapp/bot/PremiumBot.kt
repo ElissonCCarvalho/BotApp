@@ -1,13 +1,15 @@
 package com.botapp.bot
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.botapp.historic.Historic
 import com.botapp.question.Question
 import java.text.SimpleDateFormat
 
 class PremiumBot : AdvancedBot {
-    constructor() : super("Marciano")
-
     constructor(name: String) : super(name)
+
+    constructor(parcel: Parcel) : this(parcel.readString()!!) { }
 
     private fun getHistoric(): String {
         val builder = StringBuilder()
@@ -37,5 +39,15 @@ class PremiumBot : AdvancedBot {
         if (question.text.equals("agir", ignoreCase = true)) return this.getHistoric()
 
         return super.reply(question)
+    }
+
+    companion object CREATOR : Parcelable.Creator<Bot> {
+        override fun createFromParcel(parcel: Parcel): Bot {
+            return PremiumBot(parcel)
+        }
+
+        override fun newArray(size: Int): Array<Bot?> {
+            return arrayOfNulls(size)
+        }
     }
 }
