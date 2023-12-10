@@ -1,6 +1,7 @@
 package com.botapp.ui
 
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,10 +35,6 @@ class MakeQuestionActivity : AppCompatActivity() {
 
             val question = Question().makeQuestion(input)
 
-            //val recViewResponse = findViewById<RecyclerView>(R.id.recViewResponse)
-
-            //recViewResponse.adapter =
-
             lblResponse.text = bot.reply(question)
 
             val historic = H(question.text, lblResponse.text.toString(), bot, Date())
@@ -45,7 +42,17 @@ class MakeQuestionActivity : AppCompatActivity() {
             Historic.save(historic)
 
             this.hideKeyboard(edtQuestion)
+
+            if(lblResponse.text == "Até a próxima!")
+                this.finish();
         }
+    }
+
+    fun toChooseBotActivity() {
+
+        val intent = Intent(this, ChooseBotActivity::class.java)
+
+        startActivity(intent)
     }
 
     private fun hideKeyboard(edtQuestion: EditText) {

@@ -4,13 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.TextView
 import com.botapp.MainActivity
 import com.botapp.R
 import com.botapp.bot.AdvancedBot
 import com.botapp.bot.Bot
 import com.botapp.bot.PremiumBot
-import com.botapp.question.Question
 
 class ChooseBotActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,26 +25,27 @@ class ChooseBotActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        fun toSelectGameActivity(bot: Bot) {
+        fun toMakeQuestionActivity(bot: Bot) {
             val bundle = Bundle()
             bundle.putParcelable("bot", bot)
 
             val intent = Intent(this, MakeQuestionActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.putExtras(bundle)
 
             startActivity(intent)
         }
 
         btnSimpleBot.setOnClickListener {
-            toSelectGameActivity(Bot("Marciano"))
+            toMakeQuestionActivity(Bot("Marciano"))
         }
 
         btnAdvancedBot.setOnClickListener {
-            toSelectGameActivity(AdvancedBot("Marciano"))
+            toMakeQuestionActivity(AdvancedBot("Marciano"))
         }
 
         btnPremiumBot.setOnClickListener {
-            toSelectGameActivity(PremiumBot("Marciano"))
+            toMakeQuestionActivity(PremiumBot("Marciano"))
         }
     }
 }
