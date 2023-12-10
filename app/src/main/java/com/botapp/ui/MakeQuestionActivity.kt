@@ -9,9 +9,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.RecyclerView
 import com.botapp.R
 import com.botapp.bot.Bot
+import com.botapp.historic.Historic
+import com.botapp.historic.Historic.Historic as H
 import com.botapp.question.Question
+import java.util.Date
 
 class MakeQuestionActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
@@ -30,7 +34,15 @@ class MakeQuestionActivity : AppCompatActivity() {
 
             val question = Question().makeQuestion(input)
 
+            //val recViewResponse = findViewById<RecyclerView>(R.id.recViewResponse)
+
+            //recViewResponse.adapter =
+
             lblResponse.text = bot.reply(question)
+
+            val historic = H(question.text, lblResponse.text.toString(), bot, Date())
+
+            Historic.save(historic)
 
             this.hideKeyboard(edtQuestion)
         }

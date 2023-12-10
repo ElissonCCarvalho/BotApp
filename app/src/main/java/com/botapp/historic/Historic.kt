@@ -10,7 +10,6 @@ object Historic {
     val historic: MutableList<Historic> = mutableListOf()
 
     fun save(entry: Historic) {
-
         if (entry.bot is PremiumBot && entry.question.equals("agir", ignoreCase = true))
             entry.response = "Exibiu o histórico"
 

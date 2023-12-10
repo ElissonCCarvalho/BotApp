@@ -10,40 +10,51 @@
         android:id="@+id/lblChooseBot"
         android:layout_width="306dp"
         android:layout_height="55dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="55dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="304dp"
+        android:layout_marginEnd="48dp"
         android:fontFamily="casual"
         android:text="Escolha um robô"
         android:textAlignment="center"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSimpleBot"
-        android:layout_width="0dp"
+        android:layout_width="325dp"
         android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         android:fontFamily="casual"
         android:text="Robô Simples"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btnAdvancedBot"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnAdvancedBot"
+        android:layout_width="322dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="casual"
+        android:text="Robô Avançado"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnPremiumBot"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnPremiumBot"
-        android:layout_width="0dp"
+        android:layout_width="327dp"
         android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="41dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="34dp"
         android:fontFamily="casual"
         android:text="Robô Premium"
         android:textSize="24sp"
@@ -53,30 +64,27 @@
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="32dp"
         android:fontFamily="casual"
         android:text="Voltar"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnAdvancedBot"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="12dp"
-        android:fontFamily="casual"
-        android:text="Robô Avançado"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnPremiumBot"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="413dp"
+        android:layout_height="288dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bot2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
