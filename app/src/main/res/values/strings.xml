@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">BotApp</string>
+    <string name="btn_submit">Enviar</string>
+    <string name="lbl_make_a_question">Faça uma pergunta</string>
+    <string name="btn_start">Iniciar</string>
+    <string name="lbl_welcome">Faça uma pergunta ao robô Marciano</string>
+    <string name="btn_simple_bot">Robô Simples</string>
+    <string name="btn_advanced_bot">Robô Avançado</string>
+    <string name="btn_premium_bot">Robô Premium</string>
+    <string name="btn_back">Voltar</string>
 </resources>

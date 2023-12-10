@@ -28,7 +28,7 @@
         android:layout_marginTop="96dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="casual"
-        android:text="Faça uma pergunta"
+        android:text="@string/lbl_make_a_question"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,8 +43,10 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="48dp"
         android:fontFamily="casual"
-        android:text="Enviar"
+        android:text="@string/btn_submit"
         android:textSize="24sp"
+        android:background="@drawable/button_shape"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,8 +73,9 @@
                 android:id="@+id/lblResponse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                android:textSize="16sp" />
+                android:fontFamily="casual"
+                android:textAlignment="textStart"
+                android:textSize="20sp" />
         </LinearLayout>
     </ScrollView>
 
