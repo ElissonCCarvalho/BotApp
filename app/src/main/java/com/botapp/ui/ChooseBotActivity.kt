@@ -30,7 +30,6 @@ class ChooseBotActivity : AppCompatActivity() {
             bundle.putParcelable("bot", bot)
 
             val intent = Intent(this, MakeQuestionActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.putExtras(bundle)
 
             startActivity(intent)

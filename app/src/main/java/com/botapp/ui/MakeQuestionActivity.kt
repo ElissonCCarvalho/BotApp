@@ -48,13 +48,6 @@ class MakeQuestionActivity : AppCompatActivity() {
         }
     }
 
-    fun toChooseBotActivity() {
-
-        val intent = Intent(this, ChooseBotActivity::class.java)
-
-        startActivity(intent)
-    }
-
     private fun hideKeyboard(edtQuestion: EditText) {
         val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(edtQuestion.windowToken, 0)
